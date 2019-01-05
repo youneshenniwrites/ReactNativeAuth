@@ -1,0 +1,12 @@
+node_modules/**/*
+.expo/*
+npm-debug.*
+*.jks
+*.p12
+*.key
+*.mobileprovision
+amplify/*
+.amplifyrc
+.watchmanconfig
+yarn.lock
+aws-exports.js
