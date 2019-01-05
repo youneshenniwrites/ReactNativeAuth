@@ -10,3 +10,6 @@ amplify/*
 .watchmanconfig
 yarn.lock
 aws-exports.js
+PhoneInput.js
+PhoneInput2.js
+
