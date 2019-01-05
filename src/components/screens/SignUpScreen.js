@@ -106,7 +106,9 @@ export default class SignUpScreen extends React.Component {
   }
   // Sign up part with AWS AMplify
   async signUp() {
-    const { username, password, email, phone_number } = this.state
+    const { username, password, email, phoneNumber } = this.state
+    // rename variable to confirm with AWS nomenclature 
+    const phone_number = phoneNumber
     await Auth.signUp({
       username,
       password,
