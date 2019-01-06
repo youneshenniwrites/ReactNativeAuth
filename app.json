@@ -8,14 +8,13 @@
       "ios",
       "android"
     ],
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#aa73b7"
     },
+    "version": "1.0.0",
+    "orientation": "portrait",
     "updates": {
       "fallbackToCacheTimeout": 0
     },
@@ -28,3 +27,4 @@
     "description": ""
   }
 }
+
