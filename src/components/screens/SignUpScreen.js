@@ -14,6 +14,7 @@ import {
   FlatList,
   Animated,
 } from 'react-native'
+
 import {
   Container,
   Item,

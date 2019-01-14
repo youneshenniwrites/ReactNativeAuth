@@ -21,34 +21,6 @@ import Amplify from '@aws-amplify/core'
 import config from './src/aws-exports'
 Amplify.configure(config)
 
-const AuthStackNavigator = createStackNavigator({
-  Welcome: {
-    screen: WelcomeScreen,
-    navigationOptions: () => ({
-      title: `App`,
-      headerBackTitle: 'Back'
-    }),
-  },
-  SignUp: {
-    screen: SignUpScreen,
-    navigationOptions: () => ({
-      title: `Create a new account`,
-    }),
-  },
-  SignIn: {
-    screen: SignInScreen,
-    navigationOptions: () => ({
-      title: `Log in to your account`,
-    }),
-  },
-  ForgetPassword: {
-    screen: ForgetPasswordScreen,
-    navigationOptions: () => ({
-      title: `Create a new password`,
-    }),
-  },
-})
-
 // Configuration and options for the createMaterialTopTabNavigator below
 const configurations = {
   Home: {
@@ -115,7 +87,7 @@ const AppTabNavigator = createMaterialTopTabNavigator(configurations, options)
 // Making the header title dynamic in AppStackNavigator
 AppTabNavigator.navigationOptions = ({ navigation }) => {
   let { routeName } = navigation.state.routes[navigation.state.index]
-  let headerTitle = routeName;
+  let headerTitle = routeName
   return {
     headerTitle,
   }
@@ -136,6 +108,7 @@ const AppStackNavigator = createStackNavigator({
   }
 })
 
+// App stack
 const AppDrawerNavigator = createDrawerNavigator(
   {
     Tabs: AppStackNavigator,
@@ -144,6 +117,35 @@ const AppDrawerNavigator = createDrawerNavigator(
     Settings: SettingsScreen
   },
 )
+
+// Auth stack
+const AuthStackNavigator = createStackNavigator({
+  Welcome: {
+    screen: WelcomeScreen,
+    navigationOptions: () => ({
+      title: `App`,
+      headerBackTitle: 'Back'
+    }),
+  },
+  SignUp: {
+    screen: SignUpScreen,
+    navigationOptions: () => ({
+      title: `Create a new account`,
+    }),
+  },
+  SignIn: {
+    screen: SignInScreen,
+    navigationOptions: () => ({
+      title: `Log in to your account`,
+    }),
+  },
+  ForgetPassword: {
+    screen: ForgetPasswordScreen,
+    navigationOptions: () => ({
+      title: `Create a new password`,
+    }),
+  },
+})
 
 export default createSwitchNavigator({
   Authloading: AuthLoadingScreen,

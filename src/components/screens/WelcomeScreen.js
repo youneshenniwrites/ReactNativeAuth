@@ -11,6 +11,9 @@ import {
 const logo = require('../images/logo.png')
 
 export default class WelcomeScreen extends React.Component {
+  // handleRoute = async (destination) => {
+  //   await this.props.navigation.navigate(destination)
+  // }
   render() {
     return (
       <View style={styles.container}>

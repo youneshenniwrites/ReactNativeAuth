@@ -51,7 +51,7 @@ export default class SignInScreen extends React.Component {
     Animated.timing(
       this.state.fadeOut,
       {
-        toValue: 1,
+        toValue: 0,
         duration: 700,
         useNativeDriver: true
       }
@@ -141,7 +141,7 @@ export default class SignInScreen extends React.Component {
                     />
                   </Item>
                   <TouchableOpacity
-                    onPress={this.signIn.bind(this)}
+                    onPress={() => this.signIn()}
                     style={styles.buttonStyle}>
                     <Text style={styles.buttonText}>
                       Sign In

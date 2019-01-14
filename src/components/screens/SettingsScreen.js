@@ -21,7 +21,7 @@ import {
   Icon,
 } from 'native-base'
 
-export default class SignInScreen extends React.Component {
+export default class SettingsScreen extends React.Component {
   state = {
     password1: '',
     password2: '',
