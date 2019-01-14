@@ -30,7 +30,7 @@ export default class SignInScreen extends React.Component {
     username: '',
     password: '',
     fadeIn: new Animated.Value(0),  // Initial value for opacity: 0
-    fadeOut: new Animated.Value(1),  // Initial value for opacity: 1
+    fadeOut: new Animated.Value(0),  // Initial value for opacity: 0
     isHidden: false
   }
   componentDidMount() {
@@ -52,7 +52,7 @@ export default class SignInScreen extends React.Component {
       this.state.fadeOut,
       {
         toValue: 1,
-        duration: 700,
+        duration: 1000,
         useNativeDriver: true
       }
     ).start()
@@ -86,7 +86,9 @@ export default class SignInScreen extends React.Component {
       <SafeAreaView style={styles.container}>
         <StatusBar/>
         <KeyboardAvoidingView style={styles.container} behavior='padding' enabled>
-          <TouchableWithoutFeedback style={styles.container} onPress={Keyboard.dismiss}>
+          <TouchableWithoutFeedback 
+            style={styles.container} 
+            onPress={Keyboard.dismiss}>
             <View style={styles.container}>
               {/* App Logo */}
               <View style={styles.logoContainer}>

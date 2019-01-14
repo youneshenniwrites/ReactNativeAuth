@@ -106,7 +106,9 @@ export default class ForgetPasswordScreen extends React.Component {
           behavior='padding' 
           enabled 
           keyboardVerticalOffset={23}>
-          <TouchableWithoutFeedback style={styles.container} onPress={Keyboard.dismiss}>
+          <TouchableWithoutFeedback 
+            style={styles.container} 
+            onPress={Keyboard.dismiss}>
             <View style={styles.container}>
               {/* App Logo */}
               <View style={styles.logoContainer}>

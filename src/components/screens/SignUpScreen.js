@@ -172,15 +172,21 @@ export default class SignUpScreen extends React.Component {
           style={styles.container} 
           behavior='padding' 
           enabled>
-          <TouchableWithoutFeedback style={styles.container} onPress={Keyboard.dismiss}>
+          <TouchableWithoutFeedback 
+            style={styles.container} 
+            onPress={Keyboard.dismiss}>
             <View style={styles.container}>
               {/* App Logo */}
               <View style={styles.logoContainer}>
                 {
                   isHidden ?
-                  <Animated.Image source={logo} style={{ opacity: fadeIn, width: 110.46, height: 117 }}/>
+                  <Animated.Image 
+                    source={logo} 
+                    style={{ opacity: fadeIn, width: 110.46, height: 117 }}/>
                   :
-                  <Animated.Image source={logo} style={{ opacity: fadeOut, width: 110.46, height: 117 }}/>
+                  <Animated.Image 
+                    source={logo} 
+                    style={{ opacity: fadeOut, width: 110.46, height: 117 }}/>
                 }
               </View>
               <Container style={styles.infoContainer}>
