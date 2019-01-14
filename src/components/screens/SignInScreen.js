@@ -51,7 +51,7 @@ export default class SignInScreen extends React.Component {
     Animated.timing(
       this.state.fadeOut,
       {
-        toValue: 0,
+        toValue: 1,
         duration: 700,
         useNativeDriver: true
       }
