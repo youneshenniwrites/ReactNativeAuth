@@ -24,7 +24,7 @@ import {
 
 import Auth from '@aws-amplify/auth'
 
-import data from '../countryCodes'
+import data from '../countriesData'
 
 // Load the app logo
 const logo = require('../images/logo.png')
