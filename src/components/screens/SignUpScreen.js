@@ -40,13 +40,20 @@ export default class SignUpScreen extends React.Component {
     password: '',
     email: '',
     phoneNumber: '',
-    authCode: '',
-    modalVisible: false,
-    flag: defaultFlag,
     fadeIn: new Animated.Value(0), 
     fadeOut: new Animated.Value(1),
-    isHidden: false
+    isHidden: false,
+    flag: defaultFlag,
+    modalVisible: false,
+    authCode: '',
   }
+  // Get user input
+  onChangeText(key, value) {
+    this.setState({
+      [key]: value
+    })
+  }
+  // Methods for logo animation
   componentDidMount() {
     this.fadeIn()
   }
@@ -72,11 +79,6 @@ export default class SignUpScreen extends React.Component {
     ).start()
     this.setState({isHidden: false})
   }
-  onChangeText(key, value) {
-    this.setState({
-      [key]: value
-    })
-  }
   // Functions for Phone Input
   showModal() {
     this.setState({ modalVisible: true })
@@ -84,7 +86,7 @@ export default class SignUpScreen extends React.Component {
   }
   hideModal() {
     this.setState({ modalVisible: false })
-    // refocus on Input after selecting country code
+    // refocus on phone Input after selecting country and closing Modal
     this.refs.FourthInput._root.focus()
     // console.log('Hidden')
   }
@@ -105,10 +107,10 @@ export default class SignUpScreen extends React.Component {
       console.log(err)
     }
   }
-  // Sign up part with AWS AMplify
+  // Sign up part with AWS Amplify
   async signUp() {
     const { username, password, email, phoneNumber } = this.state
-    // rename variable to confirm with AWS nomenclature 
+    // rename variable to conform with AWS Auth nomenclature 
     const phone_number = phoneNumber
     await Auth.signUp({
       username,
