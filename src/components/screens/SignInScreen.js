@@ -94,12 +94,16 @@ export default class SignInScreen extends React.Component {
               <View style={styles.logoContainer}>
                 {
                   isHidden ?
-                  <Animated.Image source={logo} style={{ opacity: fadeIn }}/>
+                  <Animated.Image 
+                      source={logo} 
+                      style={{ opacity: fadeIn }}/>
                   :
-                  <Animated.Image source={logo} style={{ opacity: fadeOut, width: 113.46, height: 117 }}/>
+                  <Animated.Image 
+                      source={logo} 
+                      style={{ opacity: fadeOut, width: 113.46, height: 117 }}/>
                 }
               </View>
-              {/*Infos*/}
+              {/* Infos */}
               <Container style={styles.infoContainer}>
                 <View style={styles.container}>
                   <Item rounded style={styles.itemStyle}>

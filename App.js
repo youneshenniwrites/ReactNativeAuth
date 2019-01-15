@@ -21,7 +21,7 @@ import Amplify from '@aws-amplify/core'
 import config from './src/aws-exports'
 Amplify.configure(config)
 
-// Configuration and options for the createMaterialTopTabNavigator below
+// Configurations and options for the AppTabNavigator
 const configurations = {
   Home: {
     screen: HomeScreen,
@@ -82,6 +82,7 @@ const options = {
   }
 }
 
+// Bottom App tabs
 const AppTabNavigator = createMaterialTopTabNavigator(configurations, options)
 
 // Making the header title dynamic in AppStackNavigator
