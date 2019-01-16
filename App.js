@@ -85,7 +85,7 @@ const options = {
 // Bottom App tabs
 const AppTabNavigator = createMaterialTopTabNavigator(configurations, options)
 
-// Making the header title dynamic in AppStackNavigator
+// Making the common header title dynamic in AppTabNavigator
 AppTabNavigator.navigationOptions = ({ navigation }) => {
   let { routeName } = navigation.state.routes[navigation.state.index]
   let headerTitle = routeName

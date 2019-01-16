@@ -165,7 +165,7 @@ export default class SignUpScreen extends React.Component {
     })
   }
   render() {
-    let { fadeOut, fadeIn, isHidden } = this.state
+    let { fadeOut, fadeIn, isHidden , flag } = this.state
     const countryData = data
     return (
       <SafeAreaView style={styles.container}>
@@ -268,7 +268,8 @@ export default class SignUpScreen extends React.Component {
                       style={styles.iconStyle}
                     />
                     {/* country flag */}
-                    <View><Text>{this.state.flag}</Text></View>
+                    <View><Text>{flag}</Text></View>
+                    {/* open modal */}
                     <Icon
                       active
                       name='md-arrow-dropdown'
