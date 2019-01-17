@@ -34,6 +34,11 @@ const defaultFlag = data.filter(
   obj => obj.name === 'United Kingdom'
   )[0].flag
 
+// Default render of country code
+const defaultCode = data.filter(
+  obj => obj.name === 'United Kingdom'
+  )[0].dial_code
+
 export default class SignUpScreen extends React.Component {
   state = {
     username: '',
@@ -287,7 +292,15 @@ export default class SignUpScreen extends React.Component {
                       secureTextEntry={false}
                       ref='FourthInput'
                       value={this.state.phoneNumber}
-                      onChangeText={(val) => this.onChangeText('phoneNumber', val)}
+                      onChangeText={(val) => {
+                        if (this.state.phoneNumber===''){
+                          // render UK phone code by default when Modal is not open
+                          this.onChangeText('phoneNumber', defaultCode + val)
+                        } else {
+                          // render country code based on users choice with Modal
+                          this.onChangeText('phoneNumber', val)
+                        }}
+                      }
                       onFocus={() => this.fadeOut()}
                       onEndEditing={() => this.fadeIn()}
                     />
