@@ -17,6 +17,7 @@ import SettingsScreen from './src/components/screens/SettingsScreen'
 import ProfileScreen from './src/components/screens/ProfileScreen'
 import AuthLoadingScreen from './src/components/screens/AuthLoadingScreen'
 
+// Amplify imports and config
 import Amplify from '@aws-amplify/core'
 import config from './src/aws-exports'
 Amplify.configure(config)

@@ -22,8 +22,10 @@ import {
   Icon
 } from 'native-base'
 
+// AWS Amplify
 import Auth from '@aws-amplify/auth'
 
+// Import data for countries
 import data from '../countriesData'
 
 // Load the app logo
@@ -112,10 +114,10 @@ export default class SignUpScreen extends React.Component {
       console.log(err)
     }
   }
-  // Sign up part with AWS Amplify
+  // Sign up user with AWS Amplify Auth
   async signUp() {
     const { username, password, email, phoneNumber } = this.state
-    // rename variable to conform with AWS Auth nomenclature 
+    // rename variable to conform with Amplify Auth field phone attribute
     const phone_number = phoneNumber
     await Auth.signUp({
       username,
@@ -128,15 +130,15 @@ export default class SignUpScreen extends React.Component {
     })
     .catch(err => {
       if (! err.message) {
-        console.log('Error when entering confirmation code: ', err)
-        Alert.alert('Error when entering confirmation code: ', err)
+        console.log('Error when signing up: ', err)
+        Alert.alert('Error when signing up: ', err)
       } else {
-        console.log('Error when entering confirmation code: ', err.message)
-        Alert.alert('Error when entering confirmation code: ', err.message)
+        console.log('Error when signing up: ', err.message)
+        Alert.alert('Error when signing up: ', err.message)
       }
     })
   }
-  // Confirm users and direct them to the SignIn page
+  // Confirm users and redirect them to the SignIn page
   async confirmSignUp() {
     const { username, authCode } = this.state
     await Auth.confirmSignUp(username, authCode)
@@ -161,11 +163,11 @@ export default class SignUpScreen extends React.Component {
     .then(() => console.log('Confirmation code resent successfully'))
     .catch(err => {
       if (! err.message) {
-        console.log('Error when entering confirmation code: ', err)
-        Alert.alert('Error when entering confirmation code: ', err)
+        console.log('Error requesting new confirmation code: ', err)
+        Alert.alert('Error requesting new confirmation code: ', err)
       } else {
-        console.log('Error when entering confirmation code: ', err.message)
-        Alert.alert('Error when entering confirmation code: ', err.message)
+        console.log('Error requesting new confirmation code: ', err.message)
+        Alert.alert('Error requesting new confirmation code: ', err.message)
       }
     })
   }
