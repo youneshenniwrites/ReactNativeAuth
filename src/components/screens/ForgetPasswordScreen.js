@@ -64,6 +64,7 @@ export default class ForgetPasswordScreen extends React.Component {
       [key]: value
     })
   }
+  // Request a new password
   async forgotPassword() {
     const { username } = this.state
     await Auth.forgotPassword(username)
@@ -88,11 +89,11 @@ export default class ForgetPasswordScreen extends React.Component {
     })
     .catch(err => {
       if (! err.message) {
-        console.log('Error while setting up the new password: ', err)
-        Alert.alert('Error while setting up the new password: ', err)
+        console.log('Error while confirming the new password: ', err)
+        Alert.alert('Error while confirming the new password: ', err)
       } else {
-        console.log('Error while setting up the new password: ', err.message)
-        Alert.alert('Error while setting up the new password: ', err.message)
+        console.log('Error while confirming the new password: ', err.message)
+        Alert.alert('Error while confirming the new password: ', err.message)
       }
     })
   }
