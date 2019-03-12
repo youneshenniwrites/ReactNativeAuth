@@ -22,7 +22,7 @@ import {
   Icon
 } from 'native-base'
 
-// AWS Amplify
+// AWS Amplify modular import
 import Auth from '@aws-amplify/auth'
 
 // Import data for countries
@@ -47,8 +47,8 @@ export default class SignUpScreen extends React.Component {
     password: '',
     email: '',
     phoneNumber: '',
-    fadeIn: new Animated.Value(0), 
-    fadeOut: new Animated.Value(1),
+    fadeIn: new Animated.Value(0),  // Initial value for opacity: 0
+    fadeOut: new Animated.Value(1),  // Initial value for opacity: 1
     isHidden: false,
     flag: defaultFlag,
     modalVisible: false,
@@ -80,7 +80,7 @@ export default class SignUpScreen extends React.Component {
       this.state.fadeOut,
       {
         toValue: 0,
-        duration: 700,
+        duration: 1000,
         useNativeDriver: true
       }
     ).start()
@@ -93,7 +93,7 @@ export default class SignUpScreen extends React.Component {
   }
   hideModal() {
     this.setState({ modalVisible: false })
-    // refocus on phone Input after selecting country and closing Modal
+    // refocus on phone Input after selecting country and/or closing Modal
     this.refs.FourthInput._root.focus()
     // console.log('Hidden')
   }
@@ -172,7 +172,7 @@ export default class SignUpScreen extends React.Component {
     })
   }
   render() {
-    let { fadeOut, fadeIn, isHidden , flag } = this.state
+    let { fadeOut, fadeIn, isHidden, flag } = this.state
     const countryData = data
     return (
       <SafeAreaView style={styles.container}>
@@ -181,9 +181,7 @@ export default class SignUpScreen extends React.Component {
           style={styles.container} 
           behavior='padding' 
           enabled>
-          <TouchableWithoutFeedback 
-            style={styles.container} 
-            onPress={Keyboard.dismiss}>
+          <TouchableWithoutFeedback style={styles.container} onPress={Keyboard.dismiss}>
             <View style={styles.container}>
               {/* App Logo */}
               <View style={styles.logoContainer}>
@@ -201,7 +199,7 @@ export default class SignUpScreen extends React.Component {
               <Container style={styles.infoContainer}>
                 <View style={styles.container}>
                   {/* username section  */}
-                  <Item rounded style={styles.itemStyle}>
+                  <Item style={styles.itemStyle}>
                     <Icon
                       active
                       name='person'
@@ -222,7 +220,7 @@ export default class SignUpScreen extends React.Component {
                     />
                   </Item>
                   {/*  password section  */}
-                  <Item rounded style={styles.itemStyle}>
+                  <Item style={styles.itemStyle}>
                     <Icon
                       active
                       name='lock'
@@ -245,7 +243,7 @@ export default class SignUpScreen extends React.Component {
                     />
                   </Item>
                   {/* email section */}
-                  <Item rounded style={styles.itemStyle}>
+                  <Item style={styles.itemStyle}>
                     <Icon
                       active
                       name='mail'
@@ -268,7 +266,7 @@ export default class SignUpScreen extends React.Component {
                     />
                   </Item>
                   {/* phone section  */}
-                  <Item rounded style={styles.itemStyle}>
+                  <Item style={styles.itemStyle}>
                     <Icon
                       active
                       name='call'
@@ -318,7 +316,8 @@ export default class SignUpScreen extends React.Component {
                             keyExtractor={(item, index) => index.toString()}
                             renderItem={
                               ({ item }) =>
-                                <TouchableWithoutFeedback onPress={() => this.getCountry(item.name)}>
+                                <TouchableWithoutFeedback 
+                                  onPress={() => this.getCountry(item.name)}>
                                   <View style={styles.countryStyle}>
                                     <Text style={styles.textStyle}>
                                       {item.flag} {item.name} ({item.dial_code})
@@ -340,14 +339,14 @@ export default class SignUpScreen extends React.Component {
                   </Item>
                   {/* End of phone input */}
                   <TouchableOpacity
-                    onPress={this.signUp.bind(this)}
+                    onPress={() => this.signUp()}
                     style={styles.buttonStyle}>
                     <Text style={styles.buttonText}>
                       Sign Up
                     </Text>
                   </TouchableOpacity>
                   {/* code confirmation section  */}
-                  <Item rounded style={styles.itemStyle}>
+                  <Item style={styles.itemStyle}>
                     <Icon
                       active
                       name='md-apps'
@@ -368,14 +367,14 @@ export default class SignUpScreen extends React.Component {
                     />
                   </Item>
                   <TouchableOpacity
-                    onPress={this.confirmSignUp.bind(this)}
+                    onPress={() => this.confirmSignUp()}
                     style={styles.buttonStyle}>
                     <Text style={styles.buttonText}>
                       Confirm Sign Up
                     </Text>
                   </TouchableOpacity>
                   <TouchableOpacity
-                    onPress={this.resendSignUp.bind(this)}
+                    onPress={() => this.resendSignUp()}
                     style={styles.buttonStyle}>
                     <Text style={styles.buttonText}>
                       Resend code
@@ -394,7 +393,7 @@ export default class SignUpScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#aa73b7',
+    backgroundColor: '#5059ae',
     justifyContent: 'center',
     flexDirection: 'column'
   },
@@ -402,7 +401,7 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 17,
     fontWeight: 'bold',
-    color: '#5a52a5',
+    color: '#fff',
   },
   infoContainer: {
     position: 'absolute',
@@ -414,22 +413,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 30,
-    backgroundColor: '#aa73b7',
+    backgroundColor: '#5059ae',
   },
   itemStyle: {
     marginBottom: 10,
   },
   iconStyle: {
-    color: '#5a52a5',
+    color: '#fff',
     fontSize: 28,
     marginLeft: 15
   },
   buttonStyle: {
     alignItems: 'center',
-    backgroundColor: '#667292',
+    backgroundColor: '#b44666',
     padding: 14,
     marginBottom: 10,
-    borderRadius: 24,
+    borderRadius: 3,
   },
   buttonText: {
     fontSize: 18,
@@ -448,11 +447,11 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     padding: 5,
-    fontSize: 18
+    fontSize: 20
   },
   countryStyle: {
     flex: 1,
-    backgroundColor: '#99ff',
+    backgroundColor: '#69ff',
     borderTopColor: '#211f',
     borderTopWidth: 1,
     padding: 12,
