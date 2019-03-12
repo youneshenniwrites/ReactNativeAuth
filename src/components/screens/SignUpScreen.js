@@ -273,12 +273,12 @@ export default class SignUpScreen extends React.Component {
                       style={styles.iconStyle}
                     />
                     {/* country flag */}
-                    <View><Text>{flag}</Text></View>
+                    <View><Text style={{fontSize: 40}}>{flag}</Text></View>
                     {/* open modal */}
                     <Icon
                       active
                       name='md-arrow-dropdown'
-                      style={[styles.iconStyle, { marginLeft: 0 }]}
+                      style={[styles.iconStyle, { marginLeft: 5 }]}
                       onPress={() => this.showModal()}
                     />
                     <Input
@@ -310,7 +310,7 @@ export default class SignUpScreen extends React.Component {
                       transparent={false}
                       visible={this.state.modalVisible}>
                       <View style={{ flex: 1 }}>
-                        <View style={{ flex: 7, marginTop: 80 }}>
+                        <View style={{ flex: 10, paddingTop: 80, backgroundColor: '#5059ae' }}>
                           <FlatList
                             data={countryData}
                             keyExtractor={(item, index) => index.toString()}
@@ -318,9 +318,22 @@ export default class SignUpScreen extends React.Component {
                               ({ item }) =>
                                 <TouchableWithoutFeedback 
                                   onPress={() => this.getCountry(item.name)}>
-                                  <View style={styles.countryStyle}>
-                                    <Text style={styles.textStyle}>
-                                      {item.flag} {item.name} ({item.dial_code})
+                                  <View 
+                                    style={
+                                      [
+                                        styles.countryStyle, 
+                                        {
+                                          flexDirection: 'row', 
+                                          alignItems: 'center',
+                                          justifyContent: 'space-between'
+                                        }
+                                      ]
+                                    }>
+                                    <Text style={{fontSize: 45}}>
+                                      {item.flag}
+                                    </Text>
+                                    <Text style={{fontSize: 20, color: '#fff'}}>
+                                      {item.name} ({item.dial_code})
                                     </Text>
                                   </View>
                                 </TouchableWithoutFeedback>
@@ -447,11 +460,13 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     padding: 5,
-    fontSize: 20
+    fontSize: 20,
+    color: '#fff',
+    fontWeight: 'bold'
   },
   countryStyle: {
     flex: 1,
-    backgroundColor: '#69ff',
+    backgroundColor: '#5059ae',
     borderTopColor: '#211f',
     borderTopWidth: 1,
     padding: 12,
@@ -460,8 +475,6 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 12,
     alignItems: 'center', 
-    borderTopWidth: 1,
-    borderTopColor: '#211f',
-    backgroundColor: '#fff3',
+    backgroundColor: '#b44666',
   }
 })
