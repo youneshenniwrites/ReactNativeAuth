@@ -12,14 +12,15 @@ import {
   Alert
 } from 'react-native'
 
-import Auth from '@aws-amplify/auth'
-
 import {
   Container,
   Item,
   Input,
   Icon,
 } from 'native-base'
+
+// AWS Amplify modular import
+import Auth from '@aws-amplify/auth'
 
 export default class SettingsScreen extends React.Component {
   state = {
@@ -83,7 +84,7 @@ export default class SettingsScreen extends React.Component {
                     <Text style={styles.buttonText}>Change password</Text>              
                   </View>
                   {/* Old password */}
-                  <Item rounded style={styles.itemStyle}>
+                  <Item style={styles.itemStyle}>
                     <Icon
                       active
                       name='lock'
@@ -102,7 +103,7 @@ export default class SettingsScreen extends React.Component {
                     />
                   </Item>    
                   {/* New password */}              
-                  <Item rounded style={styles.itemStyle}>
+                  <Item style={styles.itemStyle}>
                     <Icon
                       active
                       name='lock'
@@ -128,11 +129,11 @@ export default class SettingsScreen extends React.Component {
                     </Text>
                   </TouchableOpacity>
                   <View 
-                    style={{justifyContent: 'center', alignItems: 'center', paddingBottom: 100}}/>
+                    style={{justifyContent: 'center', alignItems: 'center', marginBottom: 100}}/>
                   <TouchableOpacity
                     style={[styles.buttonStyle, {flexDirection: 'row', justifyContent: 'center'}]}
                     onPress={this.signOutAlert}>
-                    <Icon name='md-power' style={{color: '#fff', paddingRight: 10}}/>
+                    <Icon name='md-power' style={{color: '#fff', marginRight: 10}}/>
                     <Text style={styles.buttonText}>
                       Sign out
                     </Text>
@@ -150,7 +151,7 @@ export default class SettingsScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#aa73b7',
+    backgroundColor: '#5059ae',
     justifyContent: 'center',
     flexDirection: 'column'
   },
@@ -158,7 +159,7 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 17,
     fontWeight: 'bold',
-    color: '#5a52a5',
+    color: '#fff',
   },
   infoContainer: {
     position: 'absolute',
@@ -169,22 +170,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 30,
-    backgroundColor: '#aa73b7',
+    backgroundColor: '#5059ae',
   },
   itemStyle: {
     marginTop: 20,
   },
   iconStyle: {
-    color: '#5a52a5',
+    color: '#fff',
     fontSize: 28,
     marginLeft: 15
   },
   buttonStyle: {
     alignItems: 'center',
-    backgroundColor: '#667292',
+    backgroundColor: '#b44666',
     padding: 14,
     marginTop: 20,
-    borderRadius: 24,
+    borderRadius: 3,
   },
   buttonText: {
     fontSize: 18,
