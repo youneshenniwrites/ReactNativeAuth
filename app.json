@@ -1,20 +1,20 @@
 {
   "expo": {
-    "name": "authApp",
-    "slug": "authApp",
+    "name": "RNAmplifyAuth",
+    "slug": "RNAmplifyAuth",
     "privacy": "public",
-    "sdkVersion": "31.0.0",
+    "sdkVersion": "32.0.0",
     "platforms": [
       "ios",
       "android"
     ],
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#aa73b7"
-    },
     "version": "1.0.0",
     "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "cover"
+    },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
@@ -23,8 +23,6 @@
     ],
     "ios": {
       "supportsTablet": true
-    },
-    "description": ""
+    }
   }
 }
-
