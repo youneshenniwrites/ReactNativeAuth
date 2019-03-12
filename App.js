@@ -1,21 +1,26 @@
-import React from 'react'
+import React from 'react';
 import { View, TouchableOpacity } from 'react-native'
+
 import { 
   createSwitchNavigator, 
-  createStackNavigator,
+  createStackNavigator ,
   createDrawerNavigator,
-  createMaterialTopTabNavigator } from 'react-navigation'
+  createMaterialTopTabNavigator
+} from 'react-navigation'
 
 import { Icon } from 'native-base'
 
+// Auth stack screen imports
+import AuthLoadingScreen from './src/components/screens/AuthLoadingScreen'
 import WelcomeScreen from './src/components/screens/WelcomeScreen'
-import SignInScreen from './src/components/screens/SignInScreen'
 import SignUpScreen from './src/components/screens/SignUpScreen'
+import SignInScreen from './src/components/screens/SignInScreen'
 import ForgetPasswordScreen from './src/components/screens/ForgetPasswordScreen'
+
+// App stack screen imports
 import HomeScreen from './src/components/screens/HomeScreen'
 import SettingsScreen from './src/components/screens/SettingsScreen'
 import ProfileScreen from './src/components/screens/ProfileScreen'
-import AuthLoadingScreen from './src/components/screens/AuthLoadingScreen'
 
 // Amplify imports and config
 import Amplify from '@aws-amplify/core'
@@ -63,12 +68,9 @@ const options = {
   tabBarOptions: {
     showLabel: true,
     activeTintColor: '#fff',
-    inactiveTintColor: '#a8abaf',
+    inactiveTintColor: '#fff9',
     style: {
-      backgroundColor: '#667292',
-      borderTopWidth: 1,
-      borderTopColor: '#ff99',//'#667292',
-      paddingBottom: 0
+      backgroundColor: '#f16f69',
     },
     labelStyle: {
       fontSize: 12,
@@ -96,8 +98,9 @@ AppTabNavigator.navigationOptions = ({ navigation }) => {
 }
 
 const AppStackNavigator = createStackNavigator({
-  AppTabNavigator: {
+  Header: {
     screen: AppTabNavigator,
+    // Set the header icon
     navigationOptions: ({navigation}) => ({
       headerLeft: (
         <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
@@ -107,25 +110,23 @@ const AppStackNavigator = createStackNavigator({
         </TouchableOpacity>
       )
     })
-  }
+  }    
 })
 
-// App stack
-const AppDrawerNavigator = createDrawerNavigator(
-  {
-    Tabs: AppStackNavigator,
-    Home: HomeScreen,
-    Profile: ProfileScreen,
-    Settings: SettingsScreen
-  },
-)
+// App stack for the drawer
+const AppDrawerNavigator = createDrawerNavigator({
+  Tabs: AppStackNavigator, // defined above
+  Home: HomeScreen,
+  Profile: ProfileScreen,
+  Settings: SettingsScreen
+})
 
 // Auth stack
 const AuthStackNavigator = createStackNavigator({
   Welcome: {
     screen: WelcomeScreen,
     navigationOptions: () => ({
-      title: `App`,
+      title: `Welcome to this App`, // for the header screen
       headerBackTitle: 'Back'
     }),
   },
@@ -151,6 +152,7 @@ const AuthStackNavigator = createStackNavigator({
 
 export default createSwitchNavigator({
   Authloading: AuthLoadingScreen,
-  Auth: AuthStackNavigator,
-  App: AppDrawerNavigator
+  Auth: AuthStackNavigator, // the Auth stack
+  App: AppDrawerNavigator, // the App stack
 })
+
