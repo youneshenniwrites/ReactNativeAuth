@@ -2,8 +2,8 @@ import React from 'react'
 import {
   StyleSheet,
   View,
-  TouchableOpacity,
   Text,
+  TouchableOpacity,
   Image
 } from 'react-native'
 
@@ -18,16 +18,19 @@ export default class WelcomeScreen extends React.Component {
     return (
       <View style={styles.container}>
         {/* App Logo */}
-        <Image source={logo}/>
-        <TouchableOpacity 
-          onPress={() => this.handleRoute('SignUp')}
-          style={styles.buttonStyle}>
-          <Text style={styles.textStyle}>Sign up</Text>
-        </TouchableOpacity>
+        <Image 
+          source={logo}
+          style={{ width: 110.46, height: 117 }}
+        />
         <TouchableOpacity 
           onPress={() => this.handleRoute('SignIn')}
           style={styles.buttonStyle}>
-          <Text style={styles.textStyle}>Sign in</Text>
+          <Text style={styles.textStyle}>Sign In</Text>
+        </TouchableOpacity>
+        <TouchableOpacity 
+          onPress={() => this.handleRoute('SignUp')}
+          style={styles.buttonStyle}>
+          <Text style={styles.textStyle}>Sign Up</Text>
         </TouchableOpacity>
         <TouchableOpacity 
           onPress={() => this.handleRoute('ForgetPassword')}
@@ -38,10 +41,11 @@ export default class WelcomeScreen extends React.Component {
     )
   }
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#aa73b7',
+    backgroundColor: '#b44666', // #b13366
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -49,7 +53,9 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   textStyle: {
+    fontWeight: 'bold',
     fontSize: 18,
-    padding: 10
+    padding: 10,
+    color: '#fff'
   }
 })
