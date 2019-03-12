@@ -13,14 +13,15 @@ import {
   Animated
 } from 'react-native'
 
-import Auth from '@aws-amplify/auth'
-
 import {
   Container,
   Item,
   Input,
   Icon
 } from 'native-base'
+
+// AWS Amplify modular import
+import Auth from '@aws-amplify/auth'
 
 // Load the app logo
 const logo = require('../images/logo.png')
@@ -30,8 +31,8 @@ export default class ForgetPasswordScreen extends React.Component {
     username: '',
     authCode: '',
     newPassword: '',
-    fadeIn: new Animated.Value(0),
-    fadeOut: new Animated.Value(1),
+    fadeIn: new Animated.Value(0),  // Initial value for opacity: 0
+    fadeOut: new Animated.Value(1),  // Initial value for opacity: 1
     isHidden: false
   }
   componentDidMount() {
@@ -53,7 +54,7 @@ export default class ForgetPasswordScreen extends React.Component {
       this.state.fadeOut,
       {
         toValue: 0,
-        duration: 700,
+        duration: 1000,
         useNativeDriver: true
       }
     ).start()
@@ -107,24 +108,28 @@ export default class ForgetPasswordScreen extends React.Component {
           behavior='padding' 
           enabled 
           keyboardVerticalOffset={23}>
-          <TouchableWithoutFeedback 
-            style={styles.container} 
-            onPress={Keyboard.dismiss}>
+          <TouchableWithoutFeedback style={styles.container} onPress={Keyboard.dismiss}>
             <View style={styles.container}>
               {/* App Logo */}
               <View style={styles.logoContainer}>
                 {
                   isHidden ?
-                  <Animated.Image source={logo} style={{ opacity: fadeIn }}/>
+                  <Animated.Image 
+                    source={logo} 
+                    style={{ opacity: fadeIn, width: 160, height: 167 }}
+                  />
                   :
-                  <Animated.Image source={logo} style={{ opacity: fadeOut }}/>
+                  <Animated.Image 
+                    source={logo} 
+                    style={{ opacity: fadeOut, width: 160, height: 167 }}
+                  />
                 }
               </View>
               {/* Infos */}
               <Container style={styles.infoContainer}>
                 <View style={styles.container}>
                   {/* Username */}
-                  <Item rounded style={styles.itemStyle}>
+                  <Item style={styles.itemStyle}>
                     <Icon
                       active
                       name='person'
@@ -144,14 +149,14 @@ export default class ForgetPasswordScreen extends React.Component {
                     />
                   </Item>
                   <TouchableOpacity
-                    onPress={this.forgotPassword.bind(this)}
+                    onPress={() => this.forgotPassword()}
                     style={styles.buttonStyle}>
                     <Text style={styles.buttonText}>
                       Send Code
                     </Text>
                   </TouchableOpacity>
                   {/* the New password section  */}
-                  <Item rounded style={styles.itemStyle}>
+                  <Item style={styles.itemStyle}>
                     <Icon
                       active
                       name='lock'
@@ -172,7 +177,7 @@ export default class ForgetPasswordScreen extends React.Component {
                     />
                   </Item>
                   {/* Code confirmation section  */}
-                  <Item rounded style={styles.itemStyle}>
+                  <Item style={styles.itemStyle}>
                     <Icon
                       active
                       name='md-apps'
@@ -194,7 +199,7 @@ export default class ForgetPasswordScreen extends React.Component {
                     />
                   </Item>
                   <TouchableOpacity
-                    onPress={this.forgotPasswordSubmit.bind(this)}
+                    onPress={() => this.forgotPasswordSubmit()}
                     style={styles.buttonStyle}>
                     <Text style={styles.buttonText}>
                       Confirm the new password
@@ -209,11 +214,10 @@ export default class ForgetPasswordScreen extends React.Component {
     );
   }
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#aa73b7',
+    backgroundColor: '#5059ae',
     justifyContent: 'center',
     flexDirection: 'column'
   },
@@ -221,7 +225,7 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 17,
     fontWeight: 'bold',
-    color: '#5a52a5',
+    color: '#fff',
   },
   infoContainer: {
     position: 'absolute',
@@ -233,22 +237,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 30,
-    backgroundColor: '#aa73b7',
+    backgroundColor: '#5059ae',
   },
   itemStyle: {
     marginBottom: 20,
   },
   iconStyle: {
-    color: '#5a52a5',
+    color: '#fff',
     fontSize: 28,
     marginLeft: 15
   },
   buttonStyle: {
     alignItems: 'center',
-    backgroundColor: '#667292',
+    backgroundColor: '#b44666',
     padding: 14,
     marginBottom: 20,
-    borderRadius: 24,
+    borderRadius: 3,
   },
   buttonText: {
     fontSize: 18,
