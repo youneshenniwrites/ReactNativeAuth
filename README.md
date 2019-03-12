@@ -2,9 +2,11 @@
 
 Complete user authentication flow for mobile applications with React Native, Expo, AWS Amplify, react-navigation, and native-base.
 
+![display](https://user-images.githubusercontent.com/26605247/54207088-75fed780-44d1-11e9-9d05-18f77c1c1513.png)
+
 ## Overview
 
-![display](https://user-images.githubusercontent.com/26605247/54207088-75fed780-44d1-11e9-9d05-18f77c1c1513.png)
+The technologies used in this app are the following:
 
 * Navigation is done with: [react-navigation](https://reactnavigation.org/).
 
@@ -14,9 +16,9 @@ Complete user authentication flow for mobile applications with React Native, Exp
 
 * Back end: [AWS Amplify](https://aws-amplify.github.io/).
 
-## Authentication Flow
+## Authentication flow
 
-* Users are redirected to the welcome screen.
+* Users are taken to the welcome screen.
 
 * Users can sign up, sign in, request a password change, navigate between screens.
 
