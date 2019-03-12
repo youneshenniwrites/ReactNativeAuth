@@ -5,6 +5,7 @@ import {
   ActivityIndicator,
 } from 'react-native'
 
+// AWS Amplify modular import
 import Auth from '@aws-amplify/auth'
 
 export default class AuthLoadingScreen extends React.Component {
@@ -25,16 +26,16 @@ export default class AuthLoadingScreen extends React.Component {
   }
   render() {
     return (
-      <View style={styles.container}>
+      <View style={styles.container}> 
         <ActivityIndicator size="large" color="#fff" />
-      </View>     
+      </View>
     )
   }
 }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#aa73b7',
+    backgroundColor: '#b44666',
     alignItems: 'center',
     justifyContent: 'center',
   },
