@@ -115,7 +115,7 @@ expo start --android
 
 ## Step by step built
 
-* A full series of articles detailing the building process of this app cna be found [here.](https://bit.ly/2RTv0ok)
+* A full series of articles detailing the building process of this app can be found [here.](https://bit.ly/2RTv0ok)
 
 * A demo video of the authentication flow is found [here.](https://bit.ly/2ubL8Et)
 
