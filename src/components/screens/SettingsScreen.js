@@ -15,9 +15,10 @@ import {
 import {
   Container,
   Item,
-  Input,
-  Icon,
+  Input
 } from 'native-base'
+
+import { Ionicons } from '@expo/vector-icons';
 
 // AWS Amplify modular import
 import Auth from '@aws-amplify/auth'
@@ -85,11 +86,7 @@ export default class SettingsScreen extends React.Component {
                   </View>
                   {/* Old password */}
                   <Item style={styles.itemStyle}>
-                    <Icon
-                      active
-                      name='lock'
-                      style={styles.iconStyle}
-                    />
+                    <Ionicons style={styles.iconStyle} name="ios-lock" />
                     <Input
                       style={styles.input}
                       placeholder='Old password'
@@ -104,11 +101,7 @@ export default class SettingsScreen extends React.Component {
                   </Item>    
                   {/* New password */}              
                   <Item style={styles.itemStyle}>
-                    <Icon
-                      active
-                      name='lock'
-                      style={styles.iconStyle}
-                    />
+                    <Ionicons style={styles.iconStyle} name="ios-lock" />
                     <Input
                       style={styles.input}
                       placeholder='New password'
@@ -133,7 +126,10 @@ export default class SettingsScreen extends React.Component {
                   <TouchableOpacity
                     style={[styles.buttonStyle, {flexDirection: 'row', justifyContent: 'center'}]}
                     onPress={this.signOutAlert}>
-                    <Icon name='md-power' style={{color: '#fff', marginRight: 10}}/>
+                    <Ionicons 
+                      name="md-power" 
+                      style={{color: '#fff', marginRight: 10, fontSize: 24}}
+                    />
                     <Text style={styles.buttonText}>
                       Sign out
                     </Text>
@@ -178,7 +174,7 @@ const styles = StyleSheet.create({
   iconStyle: {
     color: '#fff',
     fontSize: 28,
-    marginLeft: 15
+    marginRight: 15
   },
   buttonStyle: {
     alignItems: 'center',
