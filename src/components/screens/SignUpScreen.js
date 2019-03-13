@@ -15,12 +15,12 @@ import {
   Animated,
 } from 'react-native'
 
+import { Ionicons } from '@expo/vector-icons';
+
 import {
   Container,
   Item,
-  Input,
-  Icon
-} from 'native-base'
+  Input} from 'native-base'
 
 // AWS Amplify modular import
 import Auth from '@aws-amplify/auth'
@@ -200,11 +200,7 @@ export default class SignUpScreen extends React.Component {
                 <View style={styles.container}>
                   {/* username section  */}
                   <Item style={styles.itemStyle}>
-                    <Icon
-                      active
-                      name='person'
-                      style={styles.iconStyle}
-                    />
+                    <Ionicons name="ios-person" style={styles.iconStyle} />
                     <Input
                       style={styles.input}
                       placeholder='Username'
@@ -221,11 +217,7 @@ export default class SignUpScreen extends React.Component {
                   </Item>
                   {/*  password section  */}
                   <Item style={styles.itemStyle}>
-                    <Icon
-                      active
-                      name='lock'
-                      style={styles.iconStyle}
-                    />
+                    <Ionicons name="ios-lock" style={styles.iconStyle} />
                     <Input
                       style={styles.input}
                       placeholder='Password'
@@ -244,11 +236,7 @@ export default class SignUpScreen extends React.Component {
                   </Item>
                   {/* email section */}
                   <Item style={styles.itemStyle}>
-                    <Icon
-                      active
-                      name='mail'
-                      style={styles.iconStyle}
-                    />
+                    <Ionicons name="ios-mail" style={styles.iconStyle} />
                     <Input
                       style={styles.input}
                       placeholder='Email'
@@ -267,17 +255,12 @@ export default class SignUpScreen extends React.Component {
                   </Item>
                   {/* phone section  */}
                   <Item style={styles.itemStyle}>
-                    <Icon
-                      active
-                      name='call'
-                      style={styles.iconStyle}
-                    />
+                    <Ionicons name="ios-call" style={styles.iconStyle} />
                     {/* country flag */}
                     <View><Text style={{fontSize: 40}}>{flag}</Text></View>
                     {/* open modal */}
-                    <Icon
-                      active
-                      name='md-arrow-dropdown'
+                    <Ionicons 
+                      name="md-arrow-dropdown" 
                       style={[styles.iconStyle, { marginLeft: 5 }]}
                       onPress={() => this.showModal()}
                     />
@@ -360,11 +343,7 @@ export default class SignUpScreen extends React.Component {
                   </TouchableOpacity>
                   {/* code confirmation section  */}
                   <Item style={styles.itemStyle}>
-                    <Icon
-                      active
-                      name='md-apps'
-                      style={styles.iconStyle}
-                    />
+                    <Ionicons name="md-apps" style={styles.iconStyle} />
                     <Input
                       style={styles.input}
                       placeholder='Confirmation code'
@@ -434,7 +413,7 @@ const styles = StyleSheet.create({
   iconStyle: {
     color: '#fff',
     fontSize: 28,
-    marginLeft: 15
+    marginRight: 15
   },
   buttonStyle: {
     alignItems: 'center',
