@@ -13,12 +13,12 @@ import {
   Animated
 } from 'react-native'
 
+import { Ionicons } from '@expo/vector-icons';
+
 import {
   Container,
   Item,
-  Input,
-  Icon
-} from 'native-base'
+  Input} from 'native-base'
 
 // AWS Amplify modular import
 import Auth from '@aws-amplify/auth'
@@ -130,11 +130,7 @@ export default class ForgetPasswordScreen extends React.Component {
                 <View style={styles.container}>
                   {/* Username */}
                   <Item style={styles.itemStyle}>
-                    <Icon
-                      active
-                      name='person'
-                      style={styles.iconStyle}
-                    />
+                    <Ionicons name="ios-person" style={styles.iconStyle} />
                     <Input
                       style={styles.input}
                       placeholder='Username'
@@ -157,11 +153,7 @@ export default class ForgetPasswordScreen extends React.Component {
                   </TouchableOpacity>
                   {/* the New password section  */}
                   <Item style={styles.itemStyle}>
-                    <Icon
-                      active
-                      name='lock'
-                      style={styles.iconStyle}
-                    />
+                    <Ionicons name="ios-lock" style={styles.iconStyle} />
                     <Input
                       style={styles.input}
                       placeholder='New password'
@@ -178,11 +170,7 @@ export default class ForgetPasswordScreen extends React.Component {
                   </Item>
                   {/* Code confirmation section  */}
                   <Item style={styles.itemStyle}>
-                    <Icon
-                      active
-                      name='md-apps'
-                      style={styles.iconStyle}
-                    />
+                    <Ionicons name="md-apps" style={styles.iconStyle} />
                     <Input
                       style={styles.input}
                       placeholder='Confirmation code'
@@ -245,7 +233,7 @@ const styles = StyleSheet.create({
   iconStyle: {
     color: '#fff',
     fontSize: 28,
-    marginLeft: 15
+    marginRight: 15
   },
   buttonStyle: {
     alignItems: 'center',
