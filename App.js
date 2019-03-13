@@ -8,7 +8,7 @@ import {
   createMaterialTopTabNavigator
 } from 'react-navigation'
 
-import { Icon } from 'native-base'
+import { Ionicons } from '@expo/vector-icons';
 
 // Auth stack screen imports
 import AuthLoadingScreen from './src/components/screens/AuthLoadingScreen'
@@ -34,7 +34,7 @@ const configurations = {
     navigationOptions: {
       tabBarLabel: 'Home',
       tabBarIcon: ({ tintColor }) => (
-        <Icon name="ios-home" style={{fontSize: 26, color: tintColor}} />
+        <Ionicons style={{fontSize: 26, color: tintColor}} name="ios-home" />
       )
     }
   },
@@ -43,7 +43,7 @@ const configurations = {
     navigationOptions: {
       tabBarLabel: 'Profile',
       tabBarIcon: ({tintColor}) => (
-        <Icon name="ios-person" style={{fontSize: 26, color: tintColor}} />
+        <Ionicons style={{fontSize: 26, color: tintColor}} name="ios-person" />
       )
     }
   },
@@ -52,7 +52,7 @@ const configurations = {
     navigationOptions: {
       tabBarLabel: 'Settings',
       tabBarIcon: ({ tintColor }) => (
-        <Icon name="ios-settings" style={{fontSize: 26, color: tintColor}} />
+        <Ionicons style={{fontSize: 26, color: tintColor}} name="ios-settings" />
       )
     }
   },
@@ -105,7 +105,7 @@ const AppStackNavigator = createStackNavigator({
       headerLeft: (
         <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
           <View style={{paddingHorizontal: 10}}>
-            <Icon name='md-menu' size={24}/>
+            <Ionicons size={24} name="md-menu" />
           </View>
         </TouchableOpacity>
       )
