@@ -113,7 +113,7 @@ expo start --ios
 expo start --android
 ```
 
-## Step by step built
+## Step by step tutorial
 
 * A full series of articles detailing the building process of this app can be found [here.](https://bit.ly/2RTv0ok)
 
