@@ -48,7 +48,7 @@ The technologies used in this app are the following:
 1. Clone this repo to your local machine.
 
 ```
-git clone https://github.com/jtaylor1989/ReactNativeAuth.git
+git clone https://github.com/yhenni1989/ReactNativeAuth.git
 
 cd ReactNativeAuth
 ```
