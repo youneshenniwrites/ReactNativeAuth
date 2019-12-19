@@ -53,17 +53,7 @@ git clone https://github.com/yhenni1989/ReactNativeAuth.git
 cd ReactNativeAuth
 ```
 
-2. Add AWS Amplify dependencies to your project.
-
-```
-yarn add aws-amplify aws-amplify-react-native
-
-# or
-
-npm install aws-amplify aws-amplify-react-native
-```
-
-3. Initialise the AWS Amplify project.
+2. Initialise the AWS Amplify project.
 
 ```
 amplify init
@@ -73,7 +63,7 @@ Follow the same instructions as below.
 
 <img width="725" alt="init" src="https://user-images.githubusercontent.com/26605247/54290045-2f2ce280-45a2-11e9-9fe2-3e77b0a29977.png">
 
-4. Configure an Amazon Cognito User Pool to store users credentials.
+3. Configure an Amazon Cognito User Pool to store users credentials.
 
 ```
 amplify add auth
@@ -81,7 +71,7 @@ amplify add auth
 # When prompt, choose: Yes, use the default configuration.
 ```
 
-5. Time to deploy your project to AWS.
+4. Time to deploy your project to AWS.
 
 ```
 amplify push
