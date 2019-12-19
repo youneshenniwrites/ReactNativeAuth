@@ -5,19 +5,42 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@aws-amplify/core": "^2.2.1",
+    "@expo/vector-icons": "^10.0.6",
     "aws-amplify": "^2.2.1",
     "aws-amplify-react-native": "^2.2.3",
-    "expo": "^35.0.0",
-    "native-base": "2.8.0",
-    "react": "16.5.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
-    "react-navigation": "2.8.0"
+    "expo": "^36.0.1",
+    "native-base": "2.13.8",
+    "react": "16.12.0",
+    "react-native": "0.61.5",
+    "react-native-gesture-handler": "^1.5.2",
+    "react-native-reanimated": "^1.4.0",
+    "react-navigation": "4.0.10",
+    "react-navigation-drawer": "^2.3.3",
+    "react-navigation-stack": "^1.10.3",
+    "react-navigation-tabs": "^2.6.2",
+    "react-timer-mixin": "^0.13.4",
+    "styled-components": "^4.4.1"
   },
   "devDependencies": {
-    "babel-preset-expo": "^7.1.0",
+    "babel-eslint": "^9.0.0",
+    "babel-preset-expo": "^8.0.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-config-wesbos": "0.0.19",
+    "eslint-plugin-html": "^5.0.5",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "prettier": "^1.19.1"
   },
   "private": true
 }
