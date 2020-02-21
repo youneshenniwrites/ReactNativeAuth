@@ -12,6 +12,7 @@
   "dependencies": {
     "@aws-amplify/core": "^2.2.1",
     "@expo/vector-icons": "^10.0.6",
+    "@react-native-community/viewpager": "^3.3.0",
     "aws-amplify": "^2.2.1",
     "aws-amplify-react-native": "^2.2.3",
     "expo": "^36.0.1",
@@ -21,10 +22,11 @@
     "react-native-gesture-handler": "^1.5.2",
     "react-native-reanimated": "^1.4.0",
     "react-native-screens": "^2.0.0-beta.10",
+    "react-native-swiper": "^1.6.0-nightly.5",
     "react-navigation": "^4.1.1",
     "react-navigation-drawer": "^1.4.0",
     "react-navigation-stack": "^1.7.3",
-    "react-navigation-tabs": "^1.2.0",
+    "react-navigation-tabs": "^2.0.0",
     "react-timer-mixin": "^0.13.4",
     "styled-components": "^4.4.1"
   },
